@@ -1,0 +1,12 @@
+spring:
+#  通过 application.name 结合 profiles.active 拼接目标配置文件名 configclient-dev.yum 去 Config Server 中查找该文件
+  application:
+    name: configclient
+  profiles:
+    active: dev
+  cloud:
+    config:
+#      本地的 Config Server 的访问路径
+      uri: http://localhost:8762
+#      设置客户端优先判断 Config Server 获取是否正常
+      fail-fast: true
